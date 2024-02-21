@@ -12,11 +12,12 @@ public class ScreenComponent extends JComponent {
 	private BufferedImage[] sidesX = new BufferedImage[2];
 	private BufferedImage[] sidesY = new BufferedImage[2];
 	private BufferedImage center;
-	private int gap = 0;
+	private int gap = 0, screenGap = 0;
 
-	public ScreenComponent(int gap, BufferedImage background) {
+	public ScreenComponent(int gap, int screen_gap, BufferedImage background) {
 
 		this.gap = gap;
+		this.screenGap = screen_gap;
 		setBackground(background);
 
 	}
@@ -58,17 +59,17 @@ public class ScreenComponent extends JComponent {
 		if (center != null) {
 			// CORNERS
 			for (int i = 0; i < corners.length; i++) {
-				g.drawImage(corners[i], (i % 2) * (getWidth() - gap), (i > 1 ? 1 : 0) * (getHeight() - gap), gap, gap, null);
+				g.drawImage(corners[i], (i % 2) * (getWidth() - screenGap), (i > 1 ? 1 : 0) * (getHeight() - screenGap), screenGap, screenGap, null);
 			}
 			// SIDES
 			for (int i = 0; i < sidesX.length; i++) {
-				g.drawImage(sidesX[i], gap, i * (getHeight() - gap), getWidth() - gap * 2, gap, null);
+				g.drawImage(sidesX[i], screenGap, i * (getHeight() - screenGap), getWidth() - screenGap * 2, screenGap, null);
 			}
 			for (int i = 0; i < sidesY.length; i++) {
-				g.drawImage(sidesY[i], i * (getWidth() - gap), gap, gap, getHeight() - gap * 2, null);
+				g.drawImage(sidesY[i], i * (getWidth() - screenGap), screenGap, screenGap, getHeight() - screenGap * 2, null);
 			}
 			// CENTER
-			g.drawImage(center, gap, gap, getWidth() - gap * 2, getHeight() - gap * 2, null);
+			g.drawImage(center, screenGap, screenGap, getWidth() - screenGap * 2, getHeight() - screenGap * 2, null);
 		}
 
 	}

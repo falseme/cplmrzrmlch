@@ -9,7 +9,7 @@ public class ButtonLayout extends LayoutAdapter {
 
 		int W = parent.getWidth(), H = parent.getHeight(); // WIDTH // HEIGHT //
 
-		parent.getComponent(0).setBounds(0, 0, W, H);
+		parent.getComponent(0).setBounds(0, 2, W, H);
 
 	}
 

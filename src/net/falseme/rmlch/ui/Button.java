@@ -18,13 +18,12 @@ public class Button extends ScreenComponent {
 	private JLabel label;
 
 	public Button(String text) {
-		super(2, Assets.BUTTON);
+		super(2, 4, Assets.BUTTON);
 
 		setLayout(new ButtonLayout());
 
-		label = new JLabel(text + "   ");
+		label = new JLabel(text + "  ", JLabel.RIGHT);
 		label.setFont(Assets.w98);
-		label.setHorizontalAlignment(JLabel.RIGHT);
 		add(label);
 
 	}
