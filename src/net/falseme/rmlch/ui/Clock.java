@@ -1,7 +1,5 @@
 package net.falseme.rmlch.ui;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.time.LocalDateTime;
 
 import javax.swing.JLabel;
@@ -49,15 +47,6 @@ public class Clock extends ScreenComponent {
 
 		}, "Clock Thread");
 		thr.start();
-
-	}
-
-	@Override
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
-
-		g.setColor(Color.BLACK);
-//		g.fillRect(0, 0, getWidth(), getHeight());
 
 	}
 

@@ -8,8 +8,12 @@ public class Assets {
 	public static BufferedImage BUTTON;
 	public static BufferedImage BUTTON_HOVER;
 	public static BufferedImage BUTTON_PRESSED;
+	
 	public static BufferedImage INNER;
+	
 	public static BufferedImage ICON;
+	
+	public static BufferedImage SEPARATOR;
 
 	public static Font w98;
 
@@ -22,6 +26,8 @@ public class Assets {
 		INNER = Loader.loadPng("/assets/gui/inner.png");
 
 		ICON = Loader.loadPng("/assets/gui/icon.png");
+		
+		SEPARATOR = Loader.loadPng("/assets/gui/separator.png");
 
 		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 

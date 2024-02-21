@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import javax.swing.JComponent;
 
 public class ScreenComponent extends JComponent {
-	protected static final long serialVersionUID = 1l;
+	private static final long serialVersionUID = 1l;
 
 	private BufferedImage[] corners = new BufferedImage[4];
 	private BufferedImage[] sidesX = new BufferedImage[2];
