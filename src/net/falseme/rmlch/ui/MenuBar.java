@@ -20,6 +20,8 @@ public class MenuBar extends JComponent {
 			System.exit(0);
 		});
 		add(startBtn);
+		
+		add(new Clock());
 
 	}
 
