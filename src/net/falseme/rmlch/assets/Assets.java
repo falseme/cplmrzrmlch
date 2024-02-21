@@ -19,7 +19,7 @@ public class Assets {
 		BUTTON_PRESSED = Loader.loadPng("/assets/gui/button_pressed.png");
 		ICON = Loader.loadPng("/assets/gui/icon.png");
 		
-		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.PLAIN, 12);
+		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 		
 	}
 	

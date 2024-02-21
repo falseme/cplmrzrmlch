@@ -22,8 +22,8 @@ public class Button extends JComponent {
 	public Button(String text) {
 
 		setLayout(new ButtonLayout());
-		
-		label = new JLabel(text);
+
+		label = new JLabel(text + "   ");
 		label.setFont(Assets.w98);
 		label.setHorizontalAlignment(JLabel.RIGHT);
 		add(label);
@@ -50,7 +50,7 @@ public class Button extends JComponent {
 		g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
 		if (icon != null) {
 			int icongap = 2;
-			g.drawImage(icon, icongap, icongap, getWidth() - icongap * 2, getHeight() - icongap * 2, null);
+			g.drawImage(icon, icongap, icongap, getHeight() - icongap * 2, getHeight() - icongap * 2, null);
 		}
 
 	}
