@@ -18,7 +18,7 @@ public class Screen extends JFrame {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 
 		panel = new JPanel(new ScreenLayout());
-		panel.setBackground(new Color(1, 0, 128));
+		panel.setBackground(new Color(0, 96, 255));
 		add(panel);
 		
 		panel.add(new Desktop());

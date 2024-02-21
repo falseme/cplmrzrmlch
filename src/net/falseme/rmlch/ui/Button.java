@@ -15,7 +15,7 @@ public class Button extends ScreenComponent {
 
 	private BufferedImage icon = null;
 
-	private JLabel label;
+	protected JLabel label;
 
 	public Button(String text) {
 		super(2, 4, Assets.BUTTON);

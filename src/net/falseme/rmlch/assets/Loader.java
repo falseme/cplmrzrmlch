@@ -28,6 +28,23 @@ public class Loader {
 
 	}
 
+	public static BufferedImage[] loadDesktopIcon(String path) {
+
+		BufferedImage[] icons = new BufferedImage[2];
+
+		try {
+
+			icons[0] = ImageIO.read(Loader.class.getResource(path + ".png"));
+			icons[1] = ImageIO.read(Loader.class.getResource(path + "_focus.png"));
+
+		} catch (Exception e) {
+			System.out.println("ERROR: COULD NOT DESKTOP ICON PNG:" + path);
+		}
+
+		return icons;
+
+	}
+
 	public static Font loadFont(String path, int style, int size) {
 
 		Font font;

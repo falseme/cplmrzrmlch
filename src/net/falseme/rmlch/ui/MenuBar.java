@@ -16,7 +16,7 @@ public class MenuBar extends JComponent {
 		setBackground(new Color(192, 192, 192));
 		setLayout(new MenuBarLayout());
 
-		Button startBtn = new Button("    Exit", Assets.ICON, () -> {
+		Button startBtn = new Button("    Salir", Assets.ICON, () -> {
 			System.exit(0);
 		});
 		add(startBtn);

@@ -4,7 +4,7 @@ import java.awt.Container;
 
 public class DesktopLayout extends LayoutAdapter {
 
-	private final int ICONS_X = 14;
+	private final int ICONS_X = 12;
 	private final int ICONS_Y = 7;
 	
 	@Override
@@ -17,14 +17,11 @@ public class DesktopLayout extends LayoutAdapter {
 		int CW = W / ICONS_X;
 		int CH = H / ICONS_Y;
 
-		// icon dims
-		int size = (int) (CW < CH ? CW * 0.8 : CH * 0.8);
-
 		for (int i = 0; i < parent.getComponentCount(); i++) {
 
-			int y = (CH - size) / 2 + (i % ICONS_X) * CH;
-			int x = (CW - size) / 2 + (i / ICONS_Y) * CW;
-			parent.getComponent(i).setBounds(x, y, size, size);
+			int y = (i % ICONS_X) * CH;
+			int x = (i / ICONS_Y) * CW;
+			parent.getComponent(i).setBounds(x, y, CW, CH);
 
 		}
 
