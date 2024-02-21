@@ -38,7 +38,7 @@ public class Button extends ScreenComponent {
 
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		
+
 		if (icon != null) {
 			int icongap = 2;
 			g.drawImage(icon, icongap, icongap, getHeight() - icongap * 2, getHeight() - icongap * 2, null);

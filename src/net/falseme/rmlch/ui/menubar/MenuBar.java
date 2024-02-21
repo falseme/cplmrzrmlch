@@ -1,11 +1,15 @@
-package net.falseme.rmlch.ui;
+package net.falseme.rmlch.ui.menubar;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Graphics;
 
 import javax.swing.JComponent;
 
 import net.falseme.rmlch.assets.Assets;
+import net.falseme.rmlch.ui.Button;
+import net.falseme.rmlch.ui.Clock;
+import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.MenuBarLayout;
 
 public class MenuBar extends JComponent {
@@ -31,6 +35,19 @@ public class MenuBar extends JComponent {
 		g.setColor(getBackground());
 		g.fillRect(0, 0, getWidth(), getHeight());
 
+	}
+
+	public void close(String compName) {
+		for (Component c : getComponents()) {
+			if (c.getClass().getName().startsWith("net.falseme")) {
+				if (((ScreenComponent) c).getCompName() == null)
+					continue;
+				if (((ScreenComponent) c).getCompName().equals(compName)) {
+					remove(c);
+					return;
+				}
+			}
+		}
 	}
 
 }

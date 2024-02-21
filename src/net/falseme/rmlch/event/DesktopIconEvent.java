@@ -29,7 +29,7 @@ public class DesktopIconEvent implements MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		if(e.getClickCount() >= 2) {
+		if(e.getClickCount() == 2) {
 			action.run();
 			desktopIcon.setFocus(false);
 		}

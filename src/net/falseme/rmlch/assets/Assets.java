@@ -17,6 +17,10 @@ public class Assets {
 	public static BufferedImage[] DOCUMENTS = new BufferedImage[2];
 	public static BufferedImage[] MYPC = new BufferedImage[2];
 	public static BufferedImage[] EXE = new BufferedImage[2];
+	
+	public static BufferedImage WINDOW;
+	public static BufferedImage CLOSE;
+	public static BufferedImage MIN;
 
 	public static Font w98;
 
@@ -35,6 +39,10 @@ public class Assets {
 		MYPC = Loader.loadDesktopIcon("/assets/gui/win/my_pc");
 		EXE = Loader.loadDesktopIcon("/assets/gui/win/program");
 
+		WINDOW = Loader.loadPng("/assets/gui/window.png");
+		CLOSE = Loader.loadPng("/assets/gui/icons/close.png");
+		MIN = Loader.loadPng("/assets/gui/icons/min.png");
+		
 		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 
 	}

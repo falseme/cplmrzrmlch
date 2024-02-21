@@ -10,9 +10,10 @@ public class MenuBarLayout extends LayoutAdapter {
 		int W = parent.getWidth();
 		int H = parent.getHeight(); // WIDTH // HEIGHT //
 
-		// EXIT BUTTON
 		int size = (int) (H * 0.9);
 		int gap = (H - size) / 2;
+
+		// EXIT BUTTON
 		parent.getComponent(0).setBounds(gap, gap, size * 2, size);
 
 		// SEPARATORS
@@ -21,6 +22,11 @@ public class MenuBarLayout extends LayoutAdapter {
 
 		// CLOCK
 		parent.getComponent(3).setBounds(W - size * 3 - gap, gap, size * 3, size);
+
+		// WINDOW ICONS
+		for (int i = 4; i < parent.getComponentCount(); i++) {
+			parent.getComponent(i).setBounds(gap * 6 + size * 2 + (i - 4) * (size + gap * 2), gap, size, size);
+		}
 
 	}
 

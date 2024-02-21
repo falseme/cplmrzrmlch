@@ -7,34 +7,31 @@ import javax.swing.JComponent;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
+import net.falseme.rmlch.ui.window.Window;
 
 public class Desktop extends JComponent {
 	private static final long serialVersionUID = 1l;
 
 	private static DesktopIcon focusIcon;
 
-	public Desktop() {
+	public Desktop(Screen parent) {
 
 		setLayout(new DesktopLayout());
 
 		add(new DesktopIcon("Mi Equipo", Assets.MYPC, () -> {
-			System.out.println("ASDASDAS");
+			parent.open(new Window("Mi Equipo", "C:/Equipo", Assets.MYPC[0], parent));
 		}));
 
 		add(new DesktopIcon("Documentos", Assets.DOCUMENTS, () -> {
-
+			parent.open(new Window("Documentos", "C:/Equipo/Documentos", Assets.DOCUMENTS[0], parent));
 		}));
 
 		add(new DesktopIcon("Decodec", Assets.EXE, () -> {
-
-		}));
-
-		add(new DesktopIcon("Test", Assets.FOLDER, () -> {
-
+			parent.open(new Window("Decodec", "C:/Equipo/Decodec.exe", Assets.EXE[0], parent));
 		}));
 
 		add(new DesktopIcon("SECRET", Assets.LOCKED, () -> {
-
+			parent.open(new Window("SECRET", "C:/SECRET.EXE", Assets.LOCKED[0], parent));
 		}));
 
 		addMouseListener(new MouseAdapter() {
