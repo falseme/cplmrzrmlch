@@ -22,7 +22,7 @@ public class Button extends ScreenComponent {
 
 		setLayout(new ButtonLayout());
 
-		label = new JLabel(text + "  ", JLabel.RIGHT);
+		label = new JLabel(text, JLabel.CENTER);
 		label.setFont(Assets.w98);
 		add(label);
 

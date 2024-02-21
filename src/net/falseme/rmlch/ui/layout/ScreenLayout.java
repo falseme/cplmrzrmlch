@@ -11,8 +11,11 @@ public class ScreenLayout extends LayoutAdapter {
 
 		int W = parent.getWidth(), H = parent.getHeight(); // WIDTH // HEIGHT //
 
+		// Desktop
+		parent.getComponent(0).setBounds(0, 0, W, H - MENU_BAR_HEIGHT);
+
 		// Menu Bar
-		parent.getComponent(0).setBounds(0, H - MENU_BAR_HEIGHT, W, MENU_BAR_HEIGHT);
+		parent.getComponent(1).setBounds(0, H - MENU_BAR_HEIGHT, W, MENU_BAR_HEIGHT);
 
 	}
 

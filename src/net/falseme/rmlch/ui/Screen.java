@@ -21,6 +21,7 @@ public class Screen extends JFrame {
 		panel.setBackground(new Color(1, 0, 128));
 		add(panel);
 		
+		panel.add(new Desktop());
 		panel.add(new MenuBar());
 
 	}
