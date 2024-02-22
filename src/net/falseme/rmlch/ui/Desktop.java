@@ -7,6 +7,7 @@ import javax.swing.JComponent;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
+import net.falseme.rmlch.ui.window.SecretWindow;
 import net.falseme.rmlch.ui.window.Window;
 
 public class Desktop extends JComponent {
@@ -19,19 +20,19 @@ public class Desktop extends JComponent {
 		setLayout(new DesktopLayout());
 
 		add(new DesktopIcon("Mi Equipo", Assets.MYPC, () -> {
-			parent.open(new Window("Mi Equipo", "C:/Equipo", Assets.MYPC[0], parent));
+			parent.open(new Window("Mi Equipo", "C:/Equipo", Assets.MYPC[0], parent, 0, 0));
 		}));
 
 		add(new DesktopIcon("Documentos", Assets.DOCUMENTS, () -> {
-			parent.open(new Window("Documentos", "C:/Equipo/Documentos", Assets.DOCUMENTS[0], parent));
+			parent.open(new Window("Documentos", "C:/Equipo/Documentos", Assets.DOCUMENTS[0], parent, 0, 0));
 		}));
 
 		add(new DesktopIcon("Decodec", Assets.EXE, () -> {
-			parent.open(new Window("Decodec", "C:/Equipo/Decodec.exe", Assets.EXE[0], parent));
+			parent.open(new Window("Decodec", "C:/Equipo/Decodec.exe", Assets.EXE[0], parent, 0, 0));
 		}));
 
 		add(new DesktopIcon("SECRET", Assets.LOCKED, () -> {
-			parent.open(new Window("SECRET", "C:/SECRET.EXE", Assets.LOCKED[0], parent));
+			parent.open(new SecretWindow("1234", "⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚", parent));
 		}));
 
 		addMouseListener(new MouseAdapter() {

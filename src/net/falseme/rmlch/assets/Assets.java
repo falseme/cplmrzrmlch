@@ -11,16 +11,19 @@ public class Assets {
 	public static BufferedImage INNER;
 	public static BufferedImage ICON;
 	public static BufferedImage SEPARATOR;
+	public static BufferedImage TOGGLE_ACTIVE;
 
 	public static BufferedImage[] FOLDER = new BufferedImage[2];
 	public static BufferedImage[] LOCKED = new BufferedImage[2];
 	public static BufferedImage[] DOCUMENTS = new BufferedImage[2];
 	public static BufferedImage[] MYPC = new BufferedImage[2];
 	public static BufferedImage[] EXE = new BufferedImage[2];
-	
+
 	public static BufferedImage WINDOW;
 	public static BufferedImage CLOSE;
 	public static BufferedImage MIN;
+	
+	public static BufferedImage CHECK;
 
 	public static Font w98;
 
@@ -32,6 +35,7 @@ public class Assets {
 		INNER = Loader.loadPng("/assets/gui/inner.png");
 		ICON = Loader.loadPng("/assets/gui/icon.png");
 		SEPARATOR = Loader.loadPng("/assets/gui/separator.png");
+		TOGGLE_ACTIVE = Loader.loadPng("/assets/gui/toggle_active.png");
 
 		FOLDER = Loader.loadDesktopIcon("/assets/gui/win/folder");
 		LOCKED = Loader.loadDesktopIcon("/assets/gui/win/document_locked");
@@ -43,6 +47,8 @@ public class Assets {
 		CLOSE = Loader.loadPng("/assets/gui/icons/close.png");
 		MIN = Loader.loadPng("/assets/gui/icons/min.png");
 		
+		CHECK = Loader.loadPng("/assets/gui/icons/check.png");
+
 		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 
 	}

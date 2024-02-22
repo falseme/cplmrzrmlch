@@ -5,7 +5,7 @@ import java.awt.Container;
 
 public class ScreenLayout extends LayoutAdapter {
 
-	private final int MENU_BAR_HEIGHT = 42;
+	private final int MENU_BAR_HEIGHT = 45;
 
 	@Override
 	public void layoutContainer(Container parent) {

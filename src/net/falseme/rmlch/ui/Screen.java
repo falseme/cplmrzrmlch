@@ -40,10 +40,10 @@ public class Screen extends JFrame {
 		Button barbtn = new Button("", window.getIcon(), () -> {
 			if (window.isHidden()) {
 				panel.add(window);
-				panel.setComponentZOrder(window, 1);
-				window.repaint();
-				window.doLayout();
 			}
+			panel.setComponentZOrder(window, 1);
+			window.repaint();
+			window.doLayout();
 		});
 		barbtn.setCompName(window.getCompName());
 		menuBar.add(barbtn);
@@ -67,6 +67,10 @@ public class Screen extends JFrame {
 		window.setHidden(true);
 		panel.remove(window);
 		repaint();
+	}
+
+	public int getDesktopHeight() {
+		return getHeight() - menuBar.getHeight();
 	}
 
 }

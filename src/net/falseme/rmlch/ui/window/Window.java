@@ -23,7 +23,7 @@ public class Window extends ScreenComponent {
 	private BufferedImage icon;
 	private boolean hidden = false;
 
-	public Window(String title, String path, BufferedImage icon, Screen parent) {
+	public Window(String title, String path, BufferedImage icon, Screen parent, int w, int h) {
 		super(3, 3, Assets.WINDOW.getSubimage(0, Assets.WINDOW.getHeight() / 2 + 1, Assets.WINDOW.getWidth(),
 				Assets.WINDOW.getHeight() / 2 - 1));
 
@@ -35,7 +35,9 @@ public class Window extends ScreenComponent {
 		name = title;
 		this.path = path;
 
-		setBounds(120, 50, WIDTH, HEIGHT);
+		int W = w <= 0 ? WIDTH : w;
+		int H = h <= 0 ? HEIGHT : h;
+		setBounds((parent.getWidth() - W) / 2, (parent.getDesktopHeight() - H) / 2, W, H);
 
 		WindowMotionEvent windowMotionEvent = new WindowMotionEvent(this);
 		header.addMouseListener(windowMotionEvent);
