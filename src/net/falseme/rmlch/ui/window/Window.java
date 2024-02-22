@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 import net.falseme.rmlch.assets.Assets;
+import net.falseme.rmlch.event.WindowMotionEvent;
 import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.WindowLayout;
@@ -23,8 +24,8 @@ public class Window extends ScreenComponent {
 	private boolean hidden = false;
 
 	public Window(String title, String path, BufferedImage icon, Screen parent) {
-		super(3, 3, Assets.WINDOW.getSubimage(0, Assets.WINDOW.getHeight() / 2, Assets.WINDOW.getWidth(),
-				Assets.WINDOW.getHeight() / 2));
+		super(3, 3, Assets.WINDOW.getSubimage(0, Assets.WINDOW.getHeight() / 2 + 1, Assets.WINDOW.getWidth(),
+				Assets.WINDOW.getHeight() / 2 - 1));
 
 		setLayout(new WindowLayout());
 		header = new Header(title, icon, parent);
@@ -36,8 +37,12 @@ public class Window extends ScreenComponent {
 
 		setBounds(120, 50, WIDTH, HEIGHT);
 
+		WindowMotionEvent windowMotionEvent = new WindowMotionEvent(this);
+		header.addMouseListener(windowMotionEvent);
+		header.addMouseMotionListener(windowMotionEvent);
+
 	}
-	
+
 	public BufferedImage getIcon() {
 		return icon;
 	}
@@ -45,11 +50,11 @@ public class Window extends ScreenComponent {
 	public void setHidden(boolean hidden) {
 		this.hidden = hidden;
 	}
-	
+
 	public boolean isHidden() {
 		return hidden;
 	}
-	
+
 	public void doLayout() {
 		super.doLayout();
 		header.doLayout();

@@ -9,8 +9,8 @@ public class WindowLayout extends LayoutAdapter {
 	@Override
 	public void layoutContainer(Container parent) {
 
-		int W = parent.getWidth(), gap = 3;
-		parent.getComponent(0).setBounds(gap, gap, W - gap * 2, HEADER_HEIGHT);
+		int W = parent.getWidth();
+		parent.getComponent(0).setBounds(0, 0, W, HEADER_HEIGHT);
 
 	}
 

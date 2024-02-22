@@ -44,6 +44,7 @@ public class MenuBar extends JComponent {
 					continue;
 				if (((ScreenComponent) c).getCompName().equals(compName)) {
 					remove(c);
+					doLayout();
 					return;
 				}
 			}

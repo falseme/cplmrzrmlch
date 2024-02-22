@@ -27,6 +27,7 @@ public class Screen extends JFrame {
 		panel.add(new Desktop(this));
 		menuBar = new MenuBar();
 		panel.add(menuBar);
+		panel.setComponentZOrder(menuBar, 0);
 
 	}
 
@@ -35,11 +36,11 @@ public class Screen extends JFrame {
 			return;
 		Window.openedWindows.add(window);
 		panel.add(window);
-		panel.setComponentZOrder(window, 0);
+		panel.setComponentZOrder(window, 1);
 		Button barbtn = new Button("", window.getIcon(), () -> {
 			if (window.isHidden()) {
 				panel.add(window);
-				panel.setComponentZOrder(window, 0);
+				panel.setComponentZOrder(window, 1);
 				window.repaint();
 				window.doLayout();
 			}
