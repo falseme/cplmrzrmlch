@@ -41,9 +41,9 @@ public class DecodecWindow extends Window {
 		Action action = () -> {
 			decoEvent.caretUpdate(null);
 		};
-		radioContainer.add(new RadioButton("Tipo 0", Decoder.TYPE0, radiogroup, action));
-		radioContainer.add(new RadioButton("Tipo 1", Decoder.TYPE1, radiogroup, action));
-		radioContainer.add(new RadioButton("Tipo 2", Decoder.TYPE2, radiogroup, action));
+		radioContainer.add(new RadioButton("Tipo 1", Decoder.TYPE0, radiogroup, action));
+		radioContainer.add(new RadioButton("Tipo 7", Decoder.TYPE1, radiogroup, action));
+		radioContainer.add(new RadioButton("Tipo D", Decoder.TYPE2, radiogroup, action));
 
 		add(input);
 		add(radioContainer);
