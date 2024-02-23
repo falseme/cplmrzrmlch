@@ -33,7 +33,7 @@ public class Desktop extends JComponent {
 		}));
 
 		add(new DesktopIcon("SECRET", Assets.LOCKED, () -> {
-			parent.open(new SecretWindow("1234", "⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚ ⬚", parent));
+			parent.open(new SecretWindow("SECRET2", "1234", "• • • • • • • • • • •", parent));
 		}));
 
 		addMouseListener(new MouseAdapter() {
