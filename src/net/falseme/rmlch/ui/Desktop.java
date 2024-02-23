@@ -8,8 +8,8 @@ import javax.swing.JComponent;
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
 import net.falseme.rmlch.ui.window.DecodecWindow;
+import net.falseme.rmlch.ui.window.DirWindow;
 import net.falseme.rmlch.ui.window.SecretWindow;
-import net.falseme.rmlch.ui.window.Window;
 
 public class Desktop extends JComponent {
 	private static final long serialVersionUID = 1l;
@@ -21,11 +21,11 @@ public class Desktop extends JComponent {
 		setLayout(new DesktopLayout());
 
 		add(new DesktopIcon("Mi Equipo", Assets.MYPC, () -> {
-			parent.open(new Window("Mi Equipo", "C:/Equipo", Assets.MYPC[0], parent, 0, 0));
+			parent.open(new DirWindow("Mi Equipo", "C:/Equipo", Assets.MYPC[0], parent));
 		}));
 
 		add(new DesktopIcon("Documentos", Assets.DOCUMENTS, () -> {
-			parent.open(new Window("Documentos", "C:/Equipo/Documentos", Assets.DOCUMENTS[0], parent, 0, 0));
+			parent.open(new DirWindow("Documentos", "C:/Equipo/Documentos", Assets.DOCUMENTS[0], parent));
 		}));
 
 		add(new DesktopIcon("Decodec", Assets.EXE, () -> {

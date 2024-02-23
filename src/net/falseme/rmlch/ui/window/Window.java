@@ -16,7 +16,7 @@ public class Window extends ScreenComponent {
 
 	public static List<Window> openedWindows = new LinkedList<Window>();
 
-	public static int WIDTH = 600, HEIGHT = 450;
+	public static int WIDTH = 700, HEIGHT = 550;
 
 	private Header header;
 	private String path;
