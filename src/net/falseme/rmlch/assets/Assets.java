@@ -12,6 +12,8 @@ public class Assets {
 	public static BufferedImage ICON;
 	public static BufferedImage SEPARATOR;
 	public static BufferedImage TOGGLE_ACTIVE;
+	public static BufferedImage RADIO;
+	public static BufferedImage RADIO_ACTIVE;
 
 	public static BufferedImage[] FOLDER = new BufferedImage[2];
 	public static BufferedImage[] LOCKED = new BufferedImage[2];
@@ -36,6 +38,8 @@ public class Assets {
 		ICON = Loader.loadPng("/assets/gui/icon.png");
 		SEPARATOR = Loader.loadPng("/assets/gui/separator.png");
 		TOGGLE_ACTIVE = Loader.loadPng("/assets/gui/toggle_active.png");
+		RADIO = Loader.loadPng("/assets/gui/radio.png");
+		RADIO_ACTIVE = Loader.loadPng("/assets/gui/radio_selected.png");
 
 		FOLDER = Loader.loadDesktopIcon("/assets/gui/win/folder");
 		LOCKED = Loader.loadDesktopIcon("/assets/gui/win/document_locked");

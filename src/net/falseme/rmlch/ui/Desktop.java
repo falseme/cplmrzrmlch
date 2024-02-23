@@ -7,6 +7,7 @@ import javax.swing.JComponent;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
+import net.falseme.rmlch.ui.window.DecodecWindow;
 import net.falseme.rmlch.ui.window.SecretWindow;
 import net.falseme.rmlch.ui.window.Window;
 
@@ -28,7 +29,7 @@ public class Desktop extends JComponent {
 		}));
 
 		add(new DesktopIcon("Decodec", Assets.EXE, () -> {
-			parent.open(new Window("Decodec", "C:/Equipo/Decodec.exe", Assets.EXE[0], parent, 0, 0));
+			parent.open(new DecodecWindow(parent));
 		}));
 
 		add(new DesktopIcon("SECRET", Assets.LOCKED, () -> {
