@@ -8,10 +8,12 @@ import net.falseme.rmlch.ui.RadioButton;
 public class RadioButtonEvent implements MouseListener {
 
 	private RadioButton rb;
+	private Action action;
 	private boolean in = false;
 
-	public RadioButtonEvent(RadioButton rb) {
+	public RadioButtonEvent(RadioButton rb, Action externalAction) {
 		this.rb = rb;
+		action = externalAction;
 	}
 
 	@Override
@@ -28,6 +30,7 @@ public class RadioButtonEvent implements MouseListener {
 	public void mouseReleased(MouseEvent e) {
 		if (in) {
 			rb.setActive();
+			action.run();
 		}
 	}
 

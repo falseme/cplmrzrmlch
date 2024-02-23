@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.decode.Decoder;
+import net.falseme.rmlch.event.Action;
 import net.falseme.rmlch.event.DecodecEvent;
 import net.falseme.rmlch.ui.RadioButton;
 import net.falseme.rmlch.ui.Screen;
@@ -28,21 +29,25 @@ public class DecodecWindow extends Window {
 		setLayout(new DecodecWindowLayout());
 
 		input = new TextField("entrada");
-		add(input);
-
-		radioContainer = new JPanel(new RadioLayout());
-		long radiogroup = 0;
-		radioContainer.setBackground(new Color(0, 0, 0, 0));
-		radioContainer.add(new RadioButton("Tipo 0", Decoder.TYPE0, radiogroup));
-		radioContainer.add(new RadioButton("Tipo 1", Decoder.TYPE1, radiogroup));
-		radioContainer.add(new RadioButton("Tipo 2", Decoder.TYPE2, radiogroup));
-		add(radioContainer);
-
 		output = new TextField("salida");
 		output.setEditable(false);
-		add(output);
 
-		input.addCaretListener(new DecodecEvent(input, output, radiogroup));
+		radioContainer = new JPanel(new RadioLayout());
+		radioContainer.setBackground(new Color(0, 0, 0, 0));
+		long radiogroup = 0;
+		DecodecEvent decoEvent = new DecodecEvent(input, output, radiogroup);
+		input.addCaretListener(decoEvent);
+
+		Action action = () -> {
+			decoEvent.caretUpdate(null);
+		};
+		radioContainer.add(new RadioButton("Tipo 0", Decoder.TYPE0, radiogroup, action));
+		radioContainer.add(new RadioButton("Tipo 1", Decoder.TYPE1, radiogroup, action));
+		radioContainer.add(new RadioButton("Tipo 2", Decoder.TYPE2, radiogroup, action));
+
+		add(input);
+		add(radioContainer);
+		add(output);
 
 	}
 

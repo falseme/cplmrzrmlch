@@ -7,6 +7,7 @@ import java.util.LinkedList;
 import javax.swing.JLabel;
 
 import net.falseme.rmlch.assets.Assets;
+import net.falseme.rmlch.event.Action;
 import net.falseme.rmlch.event.RadioButtonEvent;
 import net.falseme.rmlch.ui.layout.ButtonLayout;
 
@@ -19,7 +20,7 @@ public class RadioButton extends ScreenComponent {
 	private long group;
 	private int id;
 
-	public RadioButton(String text, int id, long group) {
+	public RadioButton(String text, int id, long group, Action action) {
 		super(1, 1, Assets.RADIO);
 
 		this.group = group;
@@ -39,7 +40,7 @@ public class RadioButton extends ScreenComponent {
 			radioGroup.get(group).add(this);
 		}
 
-		addMouseListener(new RadioButtonEvent(this));
+		addMouseListener(new RadioButtonEvent(this, action));
 
 	}
 

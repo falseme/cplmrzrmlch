@@ -1,5 +1,6 @@
 package net.falseme.rmlch.decode;
 
+import java.util.Base64;
 import java.util.HashMap;
 
 public class Decoder {
@@ -38,14 +39,23 @@ public class Decoder {
 		case TYPE0:
 
 			for (int i = 0; i < input.length(); i++) {
-				if (cesarChars.containsKey(input.charAt(i)))
+				if (cesarChars.containsKey(input.charAt(i))) {
 					output = output.concat("" + cesarChars.get(input.charAt(i)));
-				else
-					output = output.concat("" + input.charAt(i));
+				} else {
+					output = "";
+					break;
+				}
 			}
 
 			break;
 		case TYPE1:
+
+			try {
+				byte[] bytes = Base64.getDecoder().decode(input);
+				output = new String(bytes);
+			} catch (Throwable t) {
+				output = "";
+			}
 
 			break;
 		case TYPE2:
