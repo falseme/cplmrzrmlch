@@ -1,5 +1,6 @@
 package net.falseme.rmlch.ui;
 
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -51,6 +52,10 @@ public class Desktop extends JComponent {
 			return;
 		icon.setFocus(true);
 		focusIcon = icon;
+	}
+
+	public void paintComponent(Graphics g) {
+		g.drawImage(Assets.DESKTOP_SECRET, 0, 0, getWidth(), getHeight(), null);
 	}
 
 }

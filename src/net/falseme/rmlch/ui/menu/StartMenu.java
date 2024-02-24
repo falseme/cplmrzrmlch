@@ -15,6 +15,7 @@ import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.LayoutAdapter;
 import net.falseme.rmlch.ui.window.DirWindow;
+import net.falseme.rmlch.ui.window.SettingsWindow;
 
 public class StartMenu extends ScreenComponent {
 	private static final long serialVersionUID = 1l;
@@ -33,12 +34,13 @@ public class StartMenu extends ScreenComponent {
 		});
 		add(mypc);
 
-		JButton help = new JButton("Ayuda", new ImageIcon(Assets.HELP));
-		help.addMouseListener(new StartMenuButtonEvent(help));
-		help.addActionListener((event) -> {
-			System.out.println("Ayuda");
+		JButton settings = new JButton("Ajustes", new ImageIcon(Assets.SETTINGS));
+		settings.addMouseListener(new StartMenuButtonEvent(settings));
+		settings.addActionListener((event) -> {
+			screen.hideStartMenu();
+			screen.open(new SettingsWindow(screen));
 		});
-		add(help);
+		add(settings);
 
 		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.WINMINE));
 		minesweeper.addMouseListener(new StartMenuButtonEvent(minesweeper));
@@ -47,12 +49,12 @@ public class StartMenu extends ScreenComponent {
 		});
 		add(minesweeper);
 
-		JButton settings = new JButton("Ajustes", new ImageIcon(Assets.SETTINGS));
-		settings.addMouseListener(new StartMenuButtonEvent(settings));
-		settings.addActionListener((event) -> {
-			System.out.println("Ajustes");
+		JButton help = new JButton("Ayuda", new ImageIcon(Assets.HELP));
+		help.addMouseListener(new StartMenuButtonEvent(help));
+		help.addActionListener((event) -> {
+			System.out.println("Ayuda");
 		});
-		add(settings);
+		add(help);
 
 		add(new Separator());
 

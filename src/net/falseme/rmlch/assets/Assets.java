@@ -15,6 +15,8 @@ public class Assets {
 	public static BufferedImage TOGGLE_ACTIVE;
 	public static BufferedImage RADIO;
 	public static BufferedImage RADIO_ACTIVE;
+	public static BufferedImage SLIDER_BACKGROUND;
+	public static BufferedImage SLIDER_HANDLER;
 
 	public static BufferedImage[] FOLDER = new BufferedImage[2];
 	public static BufferedImage[] LOCKED = new BufferedImage[2];
@@ -37,6 +39,8 @@ public class Assets {
 
 	public static BufferedImage CHECK;
 
+	public static BufferedImage DESKTOP_SECRET;
+
 	public static Font w98;
 
 	public static void load() {
@@ -51,6 +55,8 @@ public class Assets {
 		TOGGLE_ACTIVE = Loader.loadPng("/assets/gui/toggle_active.png");
 		RADIO = Loader.loadPng("/assets/gui/radio.png");
 		RADIO_ACTIVE = Loader.loadPng("/assets/gui/radio_selected.png");
+		SLIDER_BACKGROUND = Loader.loadPng("/assets/gui/slider_background.png");
+		SLIDER_HANDLER = Loader.loadPng("/assets/gui/slider_handler.png");
 
 		FOLDER = Loader.loadDesktopIcon("/assets/gui/win/folder");
 		LOCKED = Loader.loadDesktopIcon("/assets/gui/win/document_locked");
@@ -72,6 +78,8 @@ public class Assets {
 		NEXT = Loader.loadPng("/assets/gui/icons/next.png");
 
 		CHECK = Loader.loadPng("/assets/gui/icons/check.png");
+
+		DESKTOP_SECRET = Loader.loadPng("/assets/images/desktop_secret.png");
 
 		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 

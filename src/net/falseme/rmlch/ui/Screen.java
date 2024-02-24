@@ -114,9 +114,9 @@ public class Screen extends JFrame {
 
 	public void hideStartMenu() {
 
-		if(startMenu == null)
+		if (startMenu == null)
 			return;
-		
+
 		for (Component c : mainPanel.getComponents()) {
 			if (c == startMenu) {
 				mainPanel.remove(startMenu);
@@ -125,7 +125,15 @@ public class Screen extends JFrame {
 				break;
 			}
 		}
-		
+
+	}
+
+	public void setDesktopBackground(Color background) {
+		mainPanel.setBackground(background);
+	}
+
+	public Color getDesktopBackground() {
+		return mainPanel.getBackground();
 	}
 
 	public int getDesktopHeight() {
