@@ -19,7 +19,7 @@ public class ButtonActionListener implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		
+
 	}
 
 	@Override
@@ -29,8 +29,9 @@ public class ButtonActionListener implements MouseListener {
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
-		if(in) {
-			action.run();
+		if (in) {
+			if (action != null)
+				action.run();
 			btn.setBackground(Assets.BUTTON_HOVER);
 		}
 	}

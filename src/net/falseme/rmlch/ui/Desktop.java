@@ -38,6 +38,7 @@ public class Desktop extends JComponent {
 		addMouseListener(new MouseAdapter() {
 			public void mousePressed(MouseEvent e) {
 				setFocus(null);
+				parent.hideStartMenu();
 			}
 		});
 

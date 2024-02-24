@@ -13,11 +13,12 @@ public class MenuBarLayout extends LayoutAdapter {
 		int size = (int) (H * 0.9);
 		int gap = (H - size) / 2;
 
-		// EXIT BUTTON
-		parent.getComponent(0).setBounds(gap, gap, size * 2, size);
+		// START BUTTON
+		int startW = (int) (size * 2.2);
+		parent.getComponent(0).setBounds(gap, gap, startW, size);
 
 		// SEPARATORS
-		parent.getComponent(1).setBounds(gap * 3 + size * 2, gap, 4, size);
+		parent.getComponent(1).setBounds(gap * 3 + startW, gap, 4, size);
 		parent.getComponent(2).setBounds(W - size * 3 - gap * 5, gap, 4, size);
 
 		// CLOCK
@@ -25,7 +26,7 @@ public class MenuBarLayout extends LayoutAdapter {
 
 		// WINDOW ICONS
 		for (int i = 4; i < parent.getComponentCount(); i++) {
-			parent.getComponent(i).setBounds(gap * 6 + size * 2 + (i - 4) * (size + gap * 2), gap, size, size);
+			parent.getComponent(i).setBounds(gap * 6 + startW + (i - 4) * (size + gap * 2), gap, size, size);
 		}
 
 	}

@@ -1,12 +1,14 @@
 package net.falseme.rmlch.ui;
 
 import java.awt.Color;
+import java.awt.Component;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 import net.falseme.rmlch.ui.layout.ScreenLayout;
-import net.falseme.rmlch.ui.menubar.MenuBar;
+import net.falseme.rmlch.ui.menu.MenuBar;
+import net.falseme.rmlch.ui.menu.StartMenu;
 import net.falseme.rmlch.ui.window.Window;
 
 public class Screen extends JFrame {
@@ -16,6 +18,7 @@ public class Screen extends JFrame {
 	private Desktop desktop;
 	private MenuBar menuBar;
 	private LoadingPanel loadingPanel;
+	private StartMenu startMenu;
 
 	public Screen() {
 
@@ -29,7 +32,7 @@ public class Screen extends JFrame {
 		mainPanel.setBackground(new Color(0, 96, 255));
 
 		desktop = new Desktop(this);
-		menuBar = new MenuBar();
+		menuBar = new MenuBar(this);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -86,6 +89,43 @@ public class Screen extends JFrame {
 		window.setHidden(true);
 		mainPanel.remove(window);
 		repaint();
+	}
+
+	public void showStartMenu() {
+
+		if (startMenu == null)
+			startMenu = new StartMenu(this);
+
+		for (Component c : mainPanel.getComponents()) {
+			if (c == startMenu) {
+				mainPanel.remove(startMenu);
+				mainPanel.doLayout();
+				mainPanel.repaint();
+				return;
+			}
+		}
+
+		mainPanel.add(startMenu);
+		mainPanel.setComponentZOrder(startMenu, 1);
+		mainPanel.repaint();
+		startMenu.doLayout();
+
+	}
+
+	public void hideStartMenu() {
+
+		if(startMenu == null)
+			return;
+		
+		for (Component c : mainPanel.getComponents()) {
+			if (c == startMenu) {
+				mainPanel.remove(startMenu);
+				mainPanel.doLayout();
+				mainPanel.repaint();
+				break;
+			}
+		}
+		
 	}
 
 	public int getDesktopHeight() {

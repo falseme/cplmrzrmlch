@@ -1,4 +1,4 @@
-package net.falseme.rmlch.ui.menubar;
+package net.falseme.rmlch.ui.menu;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.ui.ScreenComponent;

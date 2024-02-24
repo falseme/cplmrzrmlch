@@ -16,7 +16,7 @@ public class ScreenLayout extends LayoutAdapter {
 
 			if (c.getClass().getName().equals("net.falseme.rmlch.ui.Desktop"))
 				c.setBounds(0, 0, W, H - MENU_BAR_HEIGHT);
-			else if (c.getClass().getName().equals("net.falseme.rmlch.ui.menubar.MenuBar"))
+			else if (c.getClass().getName().equals("net.falseme.rmlch.ui.menu.MenuBar"))
 				c.setBounds(0, H - MENU_BAR_HEIGHT, W, MENU_BAR_HEIGHT);
 
 		}
