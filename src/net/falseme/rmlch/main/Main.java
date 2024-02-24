@@ -12,10 +12,15 @@ public class Main {
 
 	public static void main(String[] args) {
 
+		System.out.println("LOADING...");
+
 		// LOAD ASSETS
 		Assets.load();
-		
-		//DECODER
+
+		// DIRECTORIES
+		Directories.load();
+
+		// DECODER
 		Decoder.load();
 
 		// INIT FULLSCREEN APP
