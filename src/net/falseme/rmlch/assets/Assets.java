@@ -22,6 +22,11 @@ public class Assets {
 	public static BufferedImage[] MYPC = new BufferedImage[2];
 	public static BufferedImage[] EXE = new BufferedImage[2];
 
+	public static BufferedImage WINMINE;
+	public static BufferedImage HELP;
+	public static BufferedImage TURNOFF;
+	public static BufferedImage SETTINGS;
+
 	public static BufferedImage WINDOW;
 	public static BufferedImage CLOSE;
 	public static BufferedImage MIN;
@@ -49,6 +54,11 @@ public class Assets {
 		DOCUMENTS = Loader.loadDesktopIcon("/assets/gui/win/documents");
 		MYPC = Loader.loadDesktopIcon("/assets/gui/win/my_pc");
 		EXE = Loader.loadDesktopIcon("/assets/gui/win/program");
+
+		WINMINE = Loader.loadPng("/assets/gui/icons/winmine.png");
+		HELP = Loader.loadPng("/assets/gui/icons/help.png");
+		TURNOFF = Loader.loadPng("/assets/gui/icons/turnoff.png");
+		SETTINGS = Loader.loadPng("/assets/gui/icons/settings.png");
 
 		WINDOW = Loader.loadPng("/assets/gui/window.png");
 		CLOSE = Loader.loadPng("/assets/gui/icons/close.png");

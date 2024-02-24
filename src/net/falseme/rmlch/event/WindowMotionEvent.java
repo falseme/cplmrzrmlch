@@ -51,6 +51,7 @@ public class WindowMotionEvent implements MouseListener, MouseMotionListener {
 		Y = window.getBounds().y;
 
 		window.getParent().setComponentZOrder(window, 1);
+		window.repaint();
 
 	}
 

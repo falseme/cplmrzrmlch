@@ -24,36 +24,36 @@ public class StartMenu extends ScreenComponent {
 		setBounds(0, screen.getDesktopHeight() - 280, 180, 280);
 		setLayout(new StartMenuLayout());
 
-		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.FOLDER[0]));
+		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.WINMINE));
 		minesweeper.addMouseListener(new StartMenuButtonEvent(minesweeper));
 		minesweeper.addActionListener((event) -> {
 			System.out.println("Buscaminas");
 		});
 		add(minesweeper);
 
-		JButton help = new JButton("Ayuda", new ImageIcon(Assets.FOLDER[0]));
+		JButton help = new JButton("Ayuda", new ImageIcon(Assets.HELP));
 		help.addMouseListener(new StartMenuButtonEvent(help));
 		help.addActionListener((event) -> {
 			System.out.println("Ayuda");
 		});
 		add(help);
 
-		JButton settings = new JButton("Ajustes", new ImageIcon(Assets.FOLDER[0]));
+		JButton settings = new JButton("Ajustes", new ImageIcon(Assets.SETTINGS));
 		settings.addMouseListener(new StartMenuButtonEvent(settings));
 		settings.addActionListener((event) -> {
 			System.out.println("Ajustes");
 		});
 		add(settings);
-		
+
 		add(new Separator());
-		
-		JButton exit = new JButton("Apagar", new ImageIcon(Assets.FOLDER[0]));
+
+		JButton exit = new JButton("Apagar", new ImageIcon(Assets.TURNOFF));
 		exit.addMouseListener(new StartMenuButtonEvent(exit));
 		exit.addActionListener((event) -> {
 			System.exit(0);
 		});
 		add(exit);
-		
+
 	}
 
 	public void doLayout() {
