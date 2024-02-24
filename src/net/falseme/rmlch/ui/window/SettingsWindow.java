@@ -31,7 +31,7 @@ public class SettingsWindow extends Window {
 		label.setForeground(Color.BLACK);
 		add(label);
 
-		slider = new Slider(60, 120, backgroundColor.getGreen(), (event) -> {
+		slider = new Slider(60, 150, backgroundColor.getGreen(), (event) -> {
 			backgroundColor = new Color(backgroundColor.getRed(), getSliderValue(), backgroundColor.getBlue());
 			repaint();
 		});

@@ -10,6 +10,7 @@ import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.main.Directories;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
 import net.falseme.rmlch.ui.window.DirWindow;
+import net.falseme.rmlch.ui.window.ImageWindow;
 
 public class Desktop extends JComponent {
 	private static final long serialVersionUID = 1l;
@@ -34,6 +35,10 @@ public class Desktop extends JComponent {
 
 		add(new DesktopIcon("Secret2.exe", Assets.LOCKED, () -> {
 			parent.open(Directories.application("Secret2.exe", parent));
+		}));
+		
+		add(new DesktopIcon("perdido", Assets.PICTURE, () -> {
+			parent.open(new ImageWindow("dos.png", parent));
 		}));
 
 		addMouseListener(new MouseAdapter() {
