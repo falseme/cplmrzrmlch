@@ -25,6 +25,7 @@ public class Assets {
 	public static BufferedImage WINDOW;
 	public static BufferedImage CLOSE;
 	public static BufferedImage MIN;
+	public static BufferedImage BACK;
 
 	public static BufferedImage CHECK;
 
@@ -52,6 +53,7 @@ public class Assets {
 		WINDOW = Loader.loadPng("/assets/gui/window.png");
 		CLOSE = Loader.loadPng("/assets/gui/icons/close.png");
 		MIN = Loader.loadPng("/assets/gui/icons/min.png");
+		BACK = Loader.loadPng("/assets/gui/icons/back.png");
 
 		CHECK = Loader.loadPng("/assets/gui/icons/check.png");
 

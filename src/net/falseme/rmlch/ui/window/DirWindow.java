@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.main.Directories;
+import net.falseme.rmlch.ui.Button;
 import net.falseme.rmlch.ui.DesktopIcon;
 import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
@@ -28,7 +29,7 @@ public class DirWindow extends Window {
 		this.parent = parent;
 
 		setLayout(new DirWindowLayout());
-		dirHeader = new DirPathHeader(path);
+		dirHeader = new DirPathHeader(this, path);
 		add(dirHeader);
 		panel = new DirPanel(this, path, parent);
 		add(panel);
@@ -82,7 +83,7 @@ class DirPathHeader extends ScreenComponent {
 	JLabel label;
 	TextField dirdisplay;
 
-	public DirPathHeader(String path) {
+	public DirPathHeader(DirWindow parent, String path) {
 		super(2, 2, Assets.BUTTON_INACTIVE);
 
 		setLayout(new DirPathHeaderLayout());
@@ -94,10 +95,27 @@ class DirPathHeader extends ScreenComponent {
 		dirdisplay.setEditable(false);
 		add(dirdisplay);
 
+		add(new Button("", Assets.BACK, () -> {
+			String p = dirdisplay.getText().trim();
+			p = p.substring(0, p.lastIndexOf('/'));
+			if (charCount(p, '/') <= 1)
+				return;
+			parent.changeDir(p.substring(0, p.lastIndexOf('/') + 1));
+		}));
+
 	}
 
 	public void setDir(String text) {
 		dirdisplay.setText(text);
+	}
+
+	private int charCount(String s, char c) {
+		int count = 0;
+		for (int i = 0; i < s.length(); i++) {
+			if (s.charAt(i) == c)
+				count++;
+		}
+		return count;
 	}
 
 }
@@ -114,7 +132,8 @@ class DirPathHeaderLayout extends LayoutAdapter {
 
 		parent.getComponent(0).setBounds(gap, gap, h * 3, h);
 		parent.getComponent(1).setBounds(gap * 2 + parent.getComponent(0).getWidth(), gap,
-				W - parent.getComponent(0).getWidth() - gap * 3, h);
+				W - parent.getComponent(0).getWidth() - gap * 4 - h, h);
+		parent.getComponent(2).setBounds(W - h - gap, gap, h, h);
 
 	}
 
@@ -155,26 +174,26 @@ class DirPanel extends ScreenComponent {
 
 class DirPanelLayout extends LayoutAdapter {
 
-	private static final int SIZE = 80;
-	private static final int MIN_GAP = 10;
+	private static final int MIN_SIZE = 100;
 
 	@Override
 	public void layoutContainer(Container parent) {
 
 		int W = parent.getWidth();
 
-		int count = W / (SIZE + MIN_GAP);
-		int GAP = (W - (SIZE * count)) / (count + 1);
+		int count = W / MIN_SIZE;
+		int SIZE = W / count;
+		int GAP = (W - (SIZE * count)) / 2;
 
 		int x = GAP;
-		int y = MIN_GAP;
+		int y = 0;
 		for (int i = 0; i < parent.getComponentCount(); i++) {
 			if (i % count == 0 && i != 0) {
 				x = GAP;
-				y += SIZE + MIN_GAP;
+				y += SIZE;
 			}
 			parent.getComponent(i).setBounds(x, y, SIZE, SIZE);
-			x += SIZE + GAP;
+			x += SIZE;
 		}
 
 	}

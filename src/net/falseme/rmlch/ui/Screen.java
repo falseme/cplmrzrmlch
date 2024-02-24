@@ -31,6 +31,8 @@ public class Screen extends JFrame {
 		desktop = new Desktop(this);
 		menuBar = new MenuBar();
 
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 	}
 
 	public void loadOS() {
