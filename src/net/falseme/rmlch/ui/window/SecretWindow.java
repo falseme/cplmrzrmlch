@@ -15,7 +15,7 @@ public class SecretWindow extends Window {
 	private TextField textField;
 
 	public SecretWindow(String title, String secretKey, String secretMessage, Screen parent) {
-		super(title, "C:/SECRET.EXE", Assets.LOCKED[0], parent, 250, 160);
+		super(title, null, Assets.LOCKED[0], parent, 300, 200);
 
 		setLayout(new SecretLayout());
 
@@ -25,7 +25,7 @@ public class SecretWindow extends Window {
 		acceptBtn = new Button("Aceptar", null, () -> {
 			if (textField.getText().equals(secretKey)) {
 				parent.close(SecretWindow.this);
-				parent.open(new MessageWindow(title, secretMessage, parent));
+				parent.open(new MessageWindow(title, secretMessage, parent, getX() + 25, getY() + 40));
 			}
 		});
 		add(acceptBtn);
@@ -55,8 +55,8 @@ class SecretLayout extends WindowLayout {
 
 		// BUTTON
 		w = (int) (W * 0.4);
-		h = (int) (H * 0.15);
-		parent.getComponent(2).setBounds((W - w) / 2, H - h * 2, w, h);
+		h = (int) (H * 0.2);
+		parent.getComponent(2).setBounds((W - w) / 2, (int) (H - h * 1.5), w, h);
 
 	}
 

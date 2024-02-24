@@ -8,9 +8,7 @@ import javax.swing.JComponent;
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.main.Directories;
 import net.falseme.rmlch.ui.layout.DesktopLayout;
-import net.falseme.rmlch.ui.window.DecodecWindow;
 import net.falseme.rmlch.ui.window.DirWindow;
-import net.falseme.rmlch.ui.window.SecretWindow;
 
 public class Desktop extends JComponent {
 	private static final long serialVersionUID = 1l;

@@ -4,6 +4,7 @@ import java.awt.image.BufferedImage;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 import net.falseme.rmlch.assets.Assets;
 import net.falseme.rmlch.event.WindowMotionEvent;
@@ -35,9 +36,11 @@ public class Window extends ScreenComponent {
 		name = title;
 		this.path = path;
 
+		Random rand = new Random();
 		int W = w <= 0 ? WIDTH : w;
 		int H = h <= 0 ? HEIGHT : h;
-		setBounds((parent.getWidth() - W) / 2, (parent.getDesktopHeight() - H) / 2, W, H);
+		setBounds(rand.nextInt(parent.getWidth() - W - 100) + 50, rand.nextInt(parent.getHeight() - H - 100) + 50, W,
+				H);
 
 		WindowMotionEvent windowMotionEvent = new WindowMotionEvent(this);
 		header.addMouseListener(windowMotionEvent);
