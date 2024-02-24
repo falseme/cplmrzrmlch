@@ -14,6 +14,7 @@ import net.falseme.rmlch.ui.Button;
 import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.LayoutAdapter;
+import net.falseme.rmlch.ui.window.DirWindow;
 
 public class StartMenu extends ScreenComponent {
 	private static final long serialVersionUID = 1l;
@@ -21,15 +22,16 @@ public class StartMenu extends ScreenComponent {
 	public StartMenu(Screen screen) {
 		super(2, 2, Assets.BUTTON);
 
-		setBounds(0, screen.getDesktopHeight() - 280, 180, 280);
+		setBounds(0, screen.getDesktopHeight() - 350, 180, 350);
 		setLayout(new StartMenuLayout());
 
-		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.WINMINE));
-		minesweeper.addMouseListener(new StartMenuButtonEvent(minesweeper));
-		minesweeper.addActionListener((event) -> {
-			System.out.println("Buscaminas");
+		JButton mypc = new JButton("Equipo", new ImageIcon(Assets.MYPC[0]));
+		mypc.addMouseListener(new StartMenuButtonEvent(mypc));
+		mypc.addActionListener((event) -> {
+			screen.hideStartMenu();
+			screen.open(new DirWindow("Mi Equipo", "C:/Equipo/", Assets.MYPC[0], screen));
 		});
-		add(minesweeper);
+		add(mypc);
 
 		JButton help = new JButton("Ayuda", new ImageIcon(Assets.HELP));
 		help.addMouseListener(new StartMenuButtonEvent(help));
@@ -37,6 +39,13 @@ public class StartMenu extends ScreenComponent {
 			System.out.println("Ayuda");
 		});
 		add(help);
+
+		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.WINMINE));
+		minesweeper.addMouseListener(new StartMenuButtonEvent(minesweeper));
+		minesweeper.addActionListener((event) -> {
+			System.out.println("Buscaminas");
+		});
+		add(minesweeper);
 
 		JButton settings = new JButton("Ajustes", new ImageIcon(Assets.SETTINGS));
 		settings.addMouseListener(new StartMenuButtonEvent(settings));

@@ -158,6 +158,10 @@ class DirPanel extends ScreenComponent {
 				add(new DesktopIcon(s, s.toLowerCase().startsWith("secret") ? Assets.LOCKED : Assets.EXE, () -> {
 					screen.open(Directories.application(s, screen));
 				}));
+			else if (s.endsWith(".png"))
+				add(new DesktopIcon(s, Assets.PICTURE, () -> {
+					screen.open(new ImageWindow(s, screen));
+				}));
 
 		}
 

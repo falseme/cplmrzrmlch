@@ -21,16 +21,19 @@ public class Assets {
 	public static BufferedImage[] DOCUMENTS = new BufferedImage[2];
 	public static BufferedImage[] MYPC = new BufferedImage[2];
 	public static BufferedImage[] EXE = new BufferedImage[2];
+	public static BufferedImage[] PICTURE = new BufferedImage[2];
 
 	public static BufferedImage WINMINE;
 	public static BufferedImage HELP;
 	public static BufferedImage TURNOFF;
 	public static BufferedImage SETTINGS;
+	public static BufferedImage IMAGE;
 
 	public static BufferedImage WINDOW;
 	public static BufferedImage CLOSE;
 	public static BufferedImage MIN;
 	public static BufferedImage BACK;
+	public static BufferedImage NEXT;
 
 	public static BufferedImage CHECK;
 
@@ -54,21 +57,28 @@ public class Assets {
 		DOCUMENTS = Loader.loadDesktopIcon("/assets/gui/win/documents");
 		MYPC = Loader.loadDesktopIcon("/assets/gui/win/my_pc");
 		EXE = Loader.loadDesktopIcon("/assets/gui/win/program");
+		PICTURE = Loader.loadDesktopIcon("/assets/gui/win/image");
 
 		WINMINE = Loader.loadPng("/assets/gui/icons/winmine.png");
 		HELP = Loader.loadPng("/assets/gui/icons/help.png");
 		TURNOFF = Loader.loadPng("/assets/gui/icons/turnoff.png");
 		SETTINGS = Loader.loadPng("/assets/gui/icons/settings.png");
+		IMAGE = Loader.loadPng("/assets/gui/icons/image.png");
 
 		WINDOW = Loader.loadPng("/assets/gui/window.png");
 		CLOSE = Loader.loadPng("/assets/gui/icons/close.png");
 		MIN = Loader.loadPng("/assets/gui/icons/min.png");
 		BACK = Loader.loadPng("/assets/gui/icons/back.png");
+		NEXT = Loader.loadPng("/assets/gui/icons/next.png");
 
 		CHECK = Loader.loadPng("/assets/gui/icons/check.png");
 
 		w98 = Loader.loadFont("/assets/font/w98.ttf", Font.BOLD, 20);
 
+	}
+
+	public static BufferedImage getImage(String title) {
+		return Loader.loadPng("/assets/images/" + title);
 	}
 
 }

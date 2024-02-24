@@ -24,7 +24,7 @@ public class Directories {
 
 		dirs.put("C:/Equipo/Documentos/",
 				new String[] { "Folder0/", "Folder1/", "Folder2/", "Folder3/" });
-		dirs.put("C:/Equipo/Imágenes/", new String[] { "img0.png", "img1.png", "img2.png", "img3.png", "img4.png" });
+		dirs.put("C:/Equipo/Imágenes/", new String[] { "moon.png", "moon.png", "moon.png", "moon.png", "moon.png" });
 		dirs.put("C:/Equipo/Videos/", new String[] {});
 		dirs.put("C:/Equipo/Música/", new String[] {});
 

@@ -17,9 +17,9 @@ public class Window extends ScreenComponent {
 
 	public static List<Window> openedWindows = new LinkedList<Window>();
 
-	public static int WIDTH = 700, HEIGHT = 550;
+	public static int WIDTH = 700, HEIGHT = 560;
 
-	private Header header;
+	protected Header header;
 	private String path;
 	private BufferedImage icon;
 	private boolean hidden = false;
