@@ -12,9 +12,9 @@ public class Directories {
 	private static TreeMap<String, String[]> dirs = new TreeMap<String, String[]>();
 	private static final String[] secretKeys = new String[] { "comotanmuchacho?", "patas", "paracuandolatercera?HDP!",
 			"Remolacha", "Warden", "Uvas", "nigger" };
-	private static final String[] secretMessages = new String[] { "• • • • • • • • • • •", "• • • • • • • • • • •",
-			"• • • • • • • • • • •", "• • • • • • • • • • •", "• • • • • • • • • • •", "• • • • • • • • • • •",
-			"• • • • • • • • • • •" };
+	private static final String[] secretMessages = new String[] { "# # # # # # # # # # #", "# # # # # # # # # # #",
+			"# # # # # # # # # # #", "# # # # # # # # # # #", "# # # # # # # # # # #", "# # # # # # # # # # #",
+			"# # # # # # # # # # #" };
 
 	// EXECUTE ON MAIN
 	public static void load() {

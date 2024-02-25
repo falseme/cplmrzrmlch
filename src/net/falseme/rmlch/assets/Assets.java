@@ -9,6 +9,7 @@ public class Assets {
 	public static BufferedImage BUTTON_HOVER;
 	public static BufferedImage BUTTON_INACTIVE;
 	public static BufferedImage BUTTON_PRESSED;
+	public static BufferedImage BUTTON_ERROR;
 	public static BufferedImage INNER;
 	public static BufferedImage ICON;
 	public static BufferedImage SEPARATOR;
@@ -49,6 +50,7 @@ public class Assets {
 		BUTTON_HOVER = Loader.loadPng("/assets/gui/button_hover.png");
 		BUTTON_INACTIVE = Loader.loadPng("/assets/gui/button_inactive.png");
 		BUTTON_PRESSED = Loader.loadPng("/assets/gui/button_pressed.png");
+		BUTTON_ERROR = Loader.loadPng("/assets/gui/button_error.png");
 		INNER = Loader.loadPng("/assets/gui/inner.png");
 		ICON = Loader.loadPng("/assets/gui/icon.png");
 		SEPARATOR = Loader.loadPng("/assets/gui/separator.png");

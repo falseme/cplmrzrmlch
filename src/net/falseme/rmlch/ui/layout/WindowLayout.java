@@ -4,7 +4,7 @@ import java.awt.Container;
 
 public class WindowLayout extends LayoutAdapter {
 
-	private static final int HEADER_HEIGHT = 32;
+	protected static final int HEADER_HEIGHT = 32;
 
 	@Override
 	public void layoutContainer(Container parent) {

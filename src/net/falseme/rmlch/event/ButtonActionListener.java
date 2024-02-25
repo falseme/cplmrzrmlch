@@ -30,9 +30,9 @@ public class ButtonActionListener implements MouseListener {
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		if (in) {
+			btn.setBackground(Assets.BUTTON_HOVER);
 			if (action != null)
 				action.run();
-			btn.setBackground(Assets.BUTTON_HOVER);
 		}
 	}
 

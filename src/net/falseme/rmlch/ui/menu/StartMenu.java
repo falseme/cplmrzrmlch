@@ -15,6 +15,7 @@ import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.LayoutAdapter;
 import net.falseme.rmlch.ui.window.DirWindow;
+import net.falseme.rmlch.ui.window.MineSweeperWindow;
 import net.falseme.rmlch.ui.window.SettingsWindow;
 
 public class StartMenu extends ScreenComponent {
@@ -45,7 +46,8 @@ public class StartMenu extends ScreenComponent {
 		JButton minesweeper = new JButton("Buscaminas", new ImageIcon(Assets.WINMINE));
 		minesweeper.addMouseListener(new StartMenuButtonEvent(minesweeper));
 		minesweeper.addActionListener((event) -> {
-			System.out.println("Buscaminas");
+			screen.hideStartMenu();
+			screen.open(new MineSweeperWindow(screen));
 		});
 		add(minesweeper);
 

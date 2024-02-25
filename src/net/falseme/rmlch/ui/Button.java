@@ -14,6 +14,7 @@ public class Button extends ScreenComponent {
 	private static final long serialVersionUID = 1l;
 
 	private BufferedImage icon = null;
+	private Action action = null;
 
 	protected JLabel label;
 
@@ -33,7 +34,21 @@ public class Button extends ScreenComponent {
 		this(text);
 		this.icon = icon;
 		addMouseListener(new ButtonActionListener(this, action));
+		this.action = action;
 
+	}
+
+	public Action action() {
+		return action;
+	}
+
+	public void setIcon(BufferedImage icon) {
+		this.icon = icon;
+	}
+
+	public void setText(String text) {
+		label.setText(text);
+		doLayout();
 	}
 
 	public void paintComponent(Graphics g) {
