@@ -18,7 +18,7 @@ public class HelpWindow extends Window {
 	private int currentPage = 0;
 
 	public HelpWindow(Screen screen) {
-		super("Ayuda", null, Assets.HELP, screen, 750, 0);
+		super("Ayuda", null, Assets.HELP, screen, 800, HEIGHT + 40);
 
 		setLayout(new HelpLayout());
 
@@ -63,9 +63,9 @@ public class HelpWindow extends Window {
 					new JLabel(""),
 					new JLabel("El Decodec puede desencriptar los siguientes tipos de mensajes:", JLabel.LEFT),
 					new JLabel(""),
-					new JLabel("• Tipo 2: Cesar Simple 'k'              (ejemplo: 'jklm' >> 'zabc')", JLabel.LEFT),
+					new JLabel("• Tipo 2: Cesar Simple 'k'              (ejemplo: 'pqrs' >> 'zabc')", JLabel.LEFT),
 					new JLabel("• Tipo 7: Base 64                           (ejemplo: 'YWJjZA==' >> 'abcd')", JLabel.LEFT),
-					new JLabel("• Tipo D: Hexadecimal a Texto    (ejemplo: '6B 6C 6D' >> 'KLM')", JLabel.LEFT),
+					new JLabel("• Tipo D: Hexadecimal a Texto    (ejemplo: '6B 6C 6D' >> 'klm')", JLabel.LEFT),
 				});
 		
 		labels.put(2,
@@ -73,7 +73,7 @@ public class HelpWindow extends Window {
 					new JLabel("Secretos", JLabel.LEFT),
 					new JLabel(""),
 					new JLabel("• Pueden estar guardados en cualquier carpeta.", JLabel.LEFT),
-					new JLabel("Navegue por el sistema operativo y resulva los 7 secretos.", JLabel.LEFT),
+					new JLabel("Navegue por el sistema operativo y resuelva los 7 secretos.", JLabel.LEFT),
 					new JLabel(""),
 					new JLabel("• La clave para resolverlos puede ser una palabra o un conjunto", JLabel.LEFT),
 					new JLabel("de varias. Utilice todas las utilidades del SO para obtener los", JLabel.LEFT),
@@ -201,7 +201,7 @@ public class HelpWindow extends Window {
 				new JLabel[] { 
 					new JLabel("Secreto 6", JLabel.LEFT),
 					new JLabel(""),
-					new JLabel("• /EdW/", JLabel.LEFT),
+					new JLabel("• /z0/", JLabel.LEFT),
 					new JLabel(""),
 					new JLabel("• Tiene 4 letras.", JLabel.LEFT),
 					new JLabel(""),

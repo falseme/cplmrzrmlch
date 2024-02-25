@@ -14,9 +14,9 @@ import net.falseme.rmlch.ui.layout.LayoutAdapter;
 public class LoadingPanel extends JPanel {
 	private static final long serialVersionUID = 1l;
 
-	private final String[] lines = new String[] { " \n", "Starting...\n ", "Product Key: Beetroot 96", " \n \n",
+	private final String[] lines = new String[] { " \n", "Starting...\n ", "Product Key: Beetroot 95", " \n \n",
 			"License provided by Root Technology. Inc..", "CD-ROM device driver",
-			"(C)Copyright Root Technology Inc. 1996\n       Device Name            :  BRTCD005E\n       Transfer Mode          :  Programmed I/O\n       Number of Drives       :  1",
+			"(C)Copyright Root Technology Inc. 1994 - 1998\n       Device Name            :  BRTCD005E\n       Transfer Mode          :  Programmed I/O\n       Number of Drives       :  1",
 			" \n \n", "MODE prepare code page function completed\n ", "MODE select code page function completed" };
 	private int count = 0;
 
@@ -63,7 +63,7 @@ public class LoadingPanel extends JPanel {
 
 	private void updateDelay() {
 		Random rand = new Random();
-		timer.setDelay(rand.nextInt(100) + 50);
+		timer.setDelay(rand.nextInt(1000) + 600);
 	}
 
 }
