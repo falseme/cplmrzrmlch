@@ -15,6 +15,7 @@ import net.falseme.rmlch.ui.Screen;
 import net.falseme.rmlch.ui.ScreenComponent;
 import net.falseme.rmlch.ui.layout.LayoutAdapter;
 import net.falseme.rmlch.ui.window.DirWindow;
+import net.falseme.rmlch.ui.window.HelpWindow;
 import net.falseme.rmlch.ui.window.MineSweeperWindow;
 import net.falseme.rmlch.ui.window.SettingsWindow;
 
@@ -54,7 +55,8 @@ public class StartMenu extends ScreenComponent {
 		JButton help = new JButton("Ayuda", new ImageIcon(Assets.HELP));
 		help.addMouseListener(new StartMenuButtonEvent(help));
 		help.addActionListener((event) -> {
-			System.out.println("Ayuda");
+			screen.hideStartMenu();
+			screen.open(new HelpWindow(screen));
 		});
 		add(help);
 

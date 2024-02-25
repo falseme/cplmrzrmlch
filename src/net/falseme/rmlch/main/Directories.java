@@ -24,10 +24,9 @@ public class Directories {
 				new String[] { "Documentos/", "Imágenes/", "Videos/", "Música/", "Secret7.exe", "Decodec.exe" });
 
 		dirs.put("C:/Equipo/Documentos/", new String[] { "m7B/", "DW4/", "EdW/", "z0/" });
-		dirs.put("C:/Equipo/Imágenes/",
-				new String[] { "6D6F.png", "6E6D.png", "cuatro.png", "6861.png", "6F3F.png", "Secret1.exe" });
+		dirs.put("C:/Equipo/Imágenes/", new String[] { "6D6F.png", "6E6D.png", "6861.png", "6F3F.png", "Secret1.exe" });
 		dirs.put("C:/Equipo/Videos/", new String[] { "tres.png" });
-		dirs.put("C:/Equipo/Música/", new String[] {});
+		dirs.put("C:/Equipo/Música/", new String[] { "cuatro.png" });
 
 		dirs.put("C:/Equipo/Documentos/m7B/",
 				new String[] { "todas.png", "moon.png", "spring.png", "night.png", "winter.png", "Secret3.exe" });
