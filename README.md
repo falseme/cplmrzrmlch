@@ -17,6 +17,10 @@
 
 ------
 
+Sabiendo el procedimiento de todos los puzzles lleva unos `20 minutos` resolverlo. Jugándolo por primera vez lleva `más tiempo`. Será mucho más fácil si ya tienes experiencia en `ARG's`. Hazlo con calma y en caso de necesitar ayuda no dudes en preguntar.
+
+------
+
 #### <img src="resources/assets/gui/win/document_locked.png" width="24" height="24" alt="secret"> Claves
 
 Las *claves* están encriptadas y ocultas. Para encontrarlas deberás utilizar tu `intelecto` y para descifrarlas posees contigo un `Decodec` capaz de desencriptar tres tipos de entradas.
