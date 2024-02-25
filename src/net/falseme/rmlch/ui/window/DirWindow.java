@@ -162,6 +162,10 @@ class DirPanel extends ScreenComponent {
 				add(new DesktopIcon(s, Assets.PICTURE, () -> {
 					screen.open(new ImageWindow(s, screen));
 				}));
+			else if (s.endsWith(".mp3"))
+				add(new DesktopIcon(s, Assets.MUSIC, () -> {
+					screen.open(new Mp3PlayerWindow(s, screen));
+				}));
 
 		}
 

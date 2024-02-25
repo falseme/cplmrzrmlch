@@ -38,6 +38,12 @@ public class Button extends ScreenComponent {
 
 	}
 
+	public void setAction(Action action) {
+		this.action = action;
+		removeMouseListener(getMouseListeners()[0]);
+		addMouseListener(new ButtonActionListener(this, action));
+	}
+
 	public Action action() {
 		return action;
 	}

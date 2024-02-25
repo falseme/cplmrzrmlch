@@ -3,11 +3,20 @@ package net.falseme.rmlch.assets;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
+
+import org.jaudiotagger.audio.AudioFile;
+import org.jaudiotagger.audio.AudioFileIO;
+import org.jaudiotagger.audio.exceptions.CannotReadException;
+import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
+import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
+import org.jaudiotagger.tag.TagException;
 
 public class Loader {
 
@@ -61,6 +70,26 @@ public class Loader {
 
 		return font.deriveFont(style, size);
 
+	}
+
+	public static AudioFile loadAudioFile(String path) {
+
+		AudioFile audioFile = null;
+		
+		try {
+
+			audioFile = AudioFileIO.read(new File(Loader.class.getResource(path).toURI()));
+
+		} catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException
+				| URISyntaxException e) {
+
+			System.out.println("ERROR: COULD NOT LOAD AUDIOFILE");
+			e.printStackTrace();
+
+		}
+
+		return audioFile;
+		
 	}
 
 }

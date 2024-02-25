@@ -63,7 +63,7 @@ public class LoadingPanel extends JPanel {
 
 	private void updateDelay() {
 		Random rand = new Random();
-		timer.setDelay(rand.nextInt(1000) + 600);
+		timer.setDelay(rand.nextInt(900) + 600);
 	}
 
 }

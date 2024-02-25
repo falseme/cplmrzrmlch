@@ -16,7 +16,7 @@ public class Header extends ScreenComponent {
 	private static final long serialVersionUID = 1l;
 
 	private JLabel label;
-	private Button min, close;
+	protected Button min, close;
 
 	public Header(String text, BufferedImage icon, Screen parent) {
 		super(3, 3, Assets.WINDOW.getSubimage(0, 0, Assets.WINDOW.getWidth(), Assets.WINDOW.getHeight() / 2));
