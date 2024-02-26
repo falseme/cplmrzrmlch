@@ -6,17 +6,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URISyntaxException;
 import java.net.URL;
 
 import javax.imageio.ImageIO;
 
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
-import org.jaudiotagger.audio.exceptions.CannotReadException;
-import org.jaudiotagger.audio.exceptions.InvalidAudioFrameException;
-import org.jaudiotagger.audio.exceptions.ReadOnlyFileException;
-import org.jaudiotagger.tag.TagException;
+
+import net.falseme.rmlch.main.Main;
 
 public class Loader {
 
@@ -75,13 +72,16 @@ public class Loader {
 	public static AudioFile loadAudioFile(String path) {
 
 		AudioFile audioFile = null;
-		
+
 		try {
 
-			audioFile = AudioFileIO.read(new File(Loader.class.getResource(path).toURI()));
+			File aux = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+			System.out.println(aux.getParentFile().getPath());
+			File song = new File(aux.getParentFile().getPath() + "/resources" + path);
 
-		} catch (CannotReadException | IOException | TagException | ReadOnlyFileException | InvalidAudioFrameException
-				| URISyntaxException e) {
+			audioFile = AudioFileIO.read(song);
+
+		} catch (Exception e) {
 
 			System.out.println("ERROR: COULD NOT LOAD AUDIOFILE");
 			e.printStackTrace();
@@ -89,7 +89,7 @@ public class Loader {
 		}
 
 		return audioFile;
-		
+
 	}
 
 }
