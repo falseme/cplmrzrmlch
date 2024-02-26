@@ -38,6 +38,6 @@ El *Sistema de Ayuda* te proporcionará una explicación general sobre la navega
 
 #### <img src="resources/assets/gui/icons/turnoff.png" width="24" height="24" alt="help"> Descarga
 
-Para descargar el programa debes precionar el boton azul de arriba y descargar el arhivo `cplmrzrmlch.rar`. Lo descomprimes y ejecutas el archivo `w95.jar`. Importante mantener el `.jar` junto a la carpeta resources y no abrirlo con WinRar. En cualquier caso puedes hacer click en `Abrir con` y seleccionar `Java`.
+Para descargar el programa debes precionar el boton azul de arriba, descargar y ejecutar el arhivo `w95.jar`. Importante no abrirlo con WinRar, en cualquier caso puedes hacer click en `Abrir con` y seleccionar `Java`.
 
 Mucha suerte!
