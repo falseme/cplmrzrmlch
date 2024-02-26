@@ -4,6 +4,7 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -12,8 +13,6 @@ import javax.imageio.ImageIO;
 
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
-
-import net.falseme.rmlch.main.Main;
 
 public class Loader {
 
@@ -75,11 +74,24 @@ public class Loader {
 
 		try {
 
-			File aux = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
-			System.out.println(aux.getParentFile().getPath());
-			File song = new File(aux.getParentFile().getPath() + "/resources" + path);
+			InputStream in = Loader.class.getResourceAsStream(path);
+			if (in == null)
+				return null;
 
-			audioFile = AudioFileIO.read(song);
+			System.out.println(in.hashCode());
+			File tempFile = File.createTempFile(String.valueOf(in.hashCode()), ".mp3");
+			tempFile.deleteOnExit();
+
+			try (FileOutputStream out = new FileOutputStream(tempFile)) {
+				// copy stream
+				byte[] buffer = new byte[1024];
+				int bytesRead;
+				while ((bytesRead = in.read(buffer)) != -1) {
+					out.write(buffer, 0, bytesRead);
+				}
+			}
+
+			audioFile = AudioFileIO.read(tempFile);
 
 		} catch (Exception e) {
 
