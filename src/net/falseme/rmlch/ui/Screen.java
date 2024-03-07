@@ -53,9 +53,9 @@ public class Screen extends JFrame {
 
 	}
 
-	public void open(Window window) {
+	public boolean open(Window window) {
 		if (Window.openedWindows.contains(window))
-			return;
+			return false;
 		Window.openedWindows.add(window);
 		mainPanel.add(window);
 		mainPanel.setComponentZOrder(window, 1);
@@ -72,6 +72,7 @@ public class Screen extends JFrame {
 		menuBar.doLayout();
 		window.repaint();
 		window.doLayout();
+		return true;
 	}
 
 	public void close(Window window) {

@@ -12,7 +12,7 @@ public class MineSweeperWindow extends Window {
 	private static final long serialVersionUID = 1L;
 
 	public MineSweeperWindow(Screen parent) {
-		super("MineSweeper", null, Assets.WINMINE, parent, 400, 420);
+		super("Buscaminas", null, Assets.WINMINE, parent, 400, 420);
 
 		setLayout(new MineSweeperLayout());
 

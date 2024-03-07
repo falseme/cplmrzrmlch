@@ -15,7 +15,7 @@ public class MessageWindow extends Window {
 	private JLabel label;
 
 	public MessageWindow(String title, String message, Screen parent, int x, int y) {
-		super(title, null, Assets.CHECK, parent, 250, 120);
+		super("msg: " + title, null, Assets.CHECK, parent, 250, 120);
 		setLocation(x, y);
 
 		setLayout(new MessageWindowLayout());

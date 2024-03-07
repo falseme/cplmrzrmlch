@@ -17,6 +17,7 @@ public class Mp3PlayerWindow extends Window {
 	private static final long serialVersionUID = 1l;
 
 	private SongSlider songSlider;
+	public MusicPlayer player;
 
 	public Mp3PlayerWindow(String mp3File, Screen parent) {
 		super("Mp3Player - " + mp3File, null, Assets.MUSIC[0], parent, 500, 200);
@@ -27,7 +28,7 @@ public class Mp3PlayerWindow extends Window {
 		songSlider = new SongSlider(0, (int) song.getLength(), 0, null);
 		add(songSlider);
 
-		MusicPlayer player = new MusicPlayer(songSlider);
+		player = new MusicPlayer(songSlider);
 		player.loadSong(song);
 
 		add(new Button("", Assets.PLAY, () -> {
